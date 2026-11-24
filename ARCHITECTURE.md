@@ -100,7 +100,21 @@ flowchart TD
 
 ---
 
-## 4. Architectural Trade-offs & Engineering Decisions
+## 4. Archify Architecture Diagram
+
+The system architecture diagram below was generated using **[Archify](https://github.com/tt-a1i/archify)** as required by the project specifications:
+
+<p align="center">
+  <img src="docs/architecture/system_architecture-dark.svg" alt="Archify Architecture Diagram" width="100%"/>
+</p>
+
+* **Interactive Standalone HTML:** [docs/architecture/system_architecture.html](docs/architecture/system_architecture.html)
+* **Light Theme SVG:** [docs/architecture/system_architecture-light.svg](docs/architecture/system_architecture-light.svg)
+* **Dark Theme SVG:** [docs/architecture/system_architecture-dark.svg](docs/architecture/system_architecture-dark.svg)
+
+---
+
+## 5. Architectural Trade-offs & Engineering Decisions
 
 | Choice Made | What We Gave Up | Rationale |
 | :--- | :--- | :--- |

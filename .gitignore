@@ -36,3 +36,8 @@ temp/
 debug/
 *.log
 sample_data/.cache_unknown/
+
+# Archify Tool Cache
+.agents/
+.archify/
+skills-lock.json

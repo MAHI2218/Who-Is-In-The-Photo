@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "repository": {
+    "revision": null,
+    "baseRevision": "eb1ddf9f707965eb4547895cbe7ed979efea6a11",
+    "sourceKind": "working-tree",
+    "root": ".",
+    "url": "https://github.com/MAHI2218/Who-Is-In-The-Photo.git",
+    "language": "py",
+    "adapter": "pyright-parser@1.1.414/python-3.14",
+    "adapterRevision": 17,
+    "snapshotId": "e15beb9d91e0cb0c197c370c21aca4ff69bdb7574d3d1c2dddb8ff3717045ef8"
+  },
+  "grouping": {
+    "depth": 2,
+    "packageBoundaries": true,
+    "groups": []
+  },
+  "excluded": {
+    "roles": [
+      "generated",
+      "test"
+    ],
+    "files": 5
+  },
+  "modules": [
+    {
+      "id": "agents-skills",
+      "label": ".agents/skills",
+      "path": ".agents/skills",
+      "files": 1,
+      "loc": 452,
+      "fanIn": 0,
+      "fanOut": 0,
+      "instability": null,
+      "entry": [
+        ".agents/skills/archify/modules/code-analysis/extract/cpp/extract.py"
+      ]
+    },
+    {
+      "id": "app",
+      "label": "app",
+      "path": "app",
+      "files": 5,
+      "loc": 1819,
+      "fanIn": 1,
+      "fanOut": 0,
+      "instability": 0,
+      "entry": [
+        "app/__init__.py",
+        "app/ui_main_window.py",
+        "app/employee_loader.py"
+      ]
+    },
+    {
+      "id": "main",
+      "label": "main.py",
+      "path": "",
+      "files": 1,
+      "loc": 23,
+      "fanIn": 0,
+      "fanOut": 1,
+      "instability": 1,
+      "entry": [
+        "main.py"
+      ]
+    },
+    {
+      "id": "scripts",
+      "label": "scripts",
+      "path": "scripts",
+      "files": 2,
+      "loc": 336,
+      "fanIn": 0,
+      "fanOut": 0,
+      "instability": null,
+      "entry": [
+        "scripts/download_models.py",
+        "scripts/generate_sample_data.py"
+      ]
+    }
+  ],
+  "fileModules": {
+    ".agents/skills/archify/modules/code-analysis/extract/cpp/extract.py": "agents-skills",
+    "app/__init__.py": "app",
+    "app/employee_loader.py": "app",
+    "app/face_recognizer.py": "app",
+    "app/image_processor.py": "app",
+    "app/ui_main_window.py": "app",
+    "main.py": "main",
+    "scripts/download_models.py": "scripts",
+    "scripts/generate_sample_data.py": "scripts"
+  },
+  "edges": [
+    {
+      "from": "main",
+      "to": "app",
+      "weight": 2,
+      "kinds": {
+        "eager": 2,
+        "implicit": 1,
+        "static": 2
+      },
+      "evidence": [
+        {
+          "file": "main.py",
+          "line": 8,
+          "to": "app/__init__.py",
+          "implicit": true
+        },
+        {
+          "file": "main.py",
+          "line": 8,
+          "to": "app/ui_main_window.py"
+        }
+      ]
+    }
+  ],
+  "unresolved": {
+    "external": 68,
+    "outside": 0,
+    "unknown": 0,
+    "opaque": 0
+  }
+}

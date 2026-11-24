@@ -1,0 +1,406 @@
+{
+  "schema_version": 1,
+  "repository": {
+    "revision": null,
+    "baseRevision": "eb1ddf9f707965eb4547895cbe7ed979efea6a11",
+    "sourceKind": "working-tree",
+    "root": ".",
+    "url": "https://github.com/MAHI2218/Who-Is-In-The-Photo.git",
+    "language": "py",
+    "adapter": "pyright-parser@1.1.414/python-3.14",
+    "adapterRevision": 17,
+    "snapshotId": "e15beb9d91e0cb0c197c370c21aca4ff69bdb7574d3d1c2dddb8ff3717045ef8"
+  },
+  "rules": [
+    "coupling/import-cycle",
+    "coupling/cycle",
+    "coupling/hub",
+    "coupling/concentration",
+    "coupling/internal-leak",
+    "complexity/function"
+  ],
+  "summary": {
+    "errors": 0,
+    "warnings": 3,
+    "info": 4,
+    "suppressed": 0
+  },
+  "analysis": {
+    "analyzer": {
+      "name": "@archify/code-analysis",
+      "version": "0.1.0-dev.1"
+    },
+    "language": "py",
+    "adapter": "pyright-parser@1.1.414/python-3.14",
+    "adapterRevision": 17,
+    "configDigest": "6352ac7c60ad60d648d6bc7c05bf1960a6db7ad20370d972b422f9e8c9d446a2",
+    "ruleVersions": {
+      "complexity/function": 1,
+      "coupling/concentration": 1,
+      "coupling/cycle": 2,
+      "coupling/hub": 1,
+      "coupling/import-cycle": 3,
+      "coupling/internal-leak": 1
+    },
+    "coverage": {
+      "files": 9,
+      "excludedRoles": [
+        "generated",
+        "test"
+      ],
+      "parseErrors": []
+    }
+  },
+  "diagnostics": [
+    {
+      "id": "COMP-9169b39cec14",
+      "code": "complexity/function",
+      "dimension": "complexity",
+      "severity": "warning",
+      "confidence": 1,
+      "message": "collect_calls in .agents/skills/archify/modules/code-analysis/extract/cpp/extract.py has cyclomatic complexity 34 and nesting depth 6 (54 lines). More independent paths make it harder to read and to test fully; this is a maintenance signal, not a defect.",
+      "subject": {
+        "file": ".agents/skills/archify/modules/code-analysis/extract/cpp/extract.py",
+        "function": "collect_calls",
+        "line": 200,
+        "endLine": 253
+      },
+      "evidence": {
+        "threshold": {
+          "complexity": 25,
+          "nesting": 6
+        },
+        "thresholds": {
+          "info": {
+            "complexity": 15,
+            "nesting": 5
+          },
+          "warning": {
+            "complexity": 25,
+            "nesting": 6
+          }
+        },
+        "complexity": 34,
+        "nesting": 6,
+        "deepestLine": 240,
+        "length": 54
+      },
+      "supportedFixes": [
+        "start at the deepest nested block: extract it into a named helper with its own tests",
+        "replace long if/elif chains on one value with a lookup table or dispatch",
+        "return early for edge cases so the main path is not nested",
+        "if the branching is inherent, raise the threshold in the analysis config rather than splitting artificially"
+      ],
+      "evidenceDigest": {
+        "files": [
+          ".agents/skills/archify/modules/code-analysis/extract/cpp/extract.py"
+        ],
+        "lines": [
+          200,
+          253
+        ],
+        "sha256": "2f29601fd27cafeea5bfe59b42a25ba9738c11f782588fe3b9e8e83b0ce0574a"
+      }
+    },
+    {
+      "id": "COMP-139d77ccf1dc",
+      "code": "complexity/function",
+      "dimension": "complexity",
+      "severity": "info",
+      "confidence": 1,
+      "message": "collect_functions in .agents/skills/archify/modules/code-analysis/extract/cpp/extract.py has cyclomatic complexity 17 and nesting depth 5 (32 lines). More independent paths make it harder to read and to test fully; this is a maintenance signal, not a defect.",
+      "subject": {
+        "file": ".agents/skills/archify/modules/code-analysis/extract/cpp/extract.py",
+        "function": "collect_functions",
+        "line": 131,
+        "endLine": 162
+      },
+      "evidence": {
+        "threshold": {
+          "complexity": 15,
+          "nesting": 5
+        },
+        "thresholds": {
+          "info": {
+            "complexity": 15,
+            "nesting": 5
+          },
+          "warning": {
+            "complexity": 25,
+            "nesting": 6
+          }
+        },
+        "complexity": 17,
+        "nesting": 5,
+        "deepestLine": 143,
+        "length": 32
+      },
+      "supportedFixes": [
+        "start at the deepest nested block: extract it into a named helper with its own tests",
+        "replace long if/elif chains on one value with a lookup table or dispatch",
+        "return early for edge cases so the main path is not nested",
+        "if the branching is inherent, raise the threshold in the analysis config rather than splitting artificially"
+      ],
+      "evidenceDigest": {
+        "files": [
+          ".agents/skills/archify/modules/code-analysis/extract/cpp/extract.py"
+        ],
+        "lines": [
+          131,
+          162
+        ],
+        "sha256": "5689326ca7a60a73b115f08c7b7fa596bace038f45f12e214d84304487d1024f"
+      }
+    },
+    {
+      "id": "COMP-de6f59860117",
+      "code": "complexity/function",
+      "dimension": "complexity",
+      "severity": "warning",
+      "confidence": 1,
+      "message": "flags in .agents/skills/archify/modules/code-analysis/extract/cpp/extract.py has cyclomatic complexity 25 (47 lines). More independent paths make it harder to read and to test fully; this is a maintenance signal, not a defect.",
+      "subject": {
+        "file": ".agents/skills/archify/modules/code-analysis/extract/cpp/extract.py",
+        "function": "flags",
+        "line": 52,
+        "endLine": 98
+      },
+      "evidence": {
+        "threshold": {
+          "complexity": 25,
+          "nesting": 6
+        },
+        "thresholds": {
+          "info": {
+            "complexity": 15,
+            "nesting": 5
+          },
+          "warning": {
+            "complexity": 25,
+            "nesting": 6
+          }
+        },
+        "complexity": 25,
+        "nesting": 3,
+        "deepestLine": 76,
+        "length": 47
+      },
+      "supportedFixes": [
+        "start at the deepest nested block: extract it into a named helper with its own tests",
+        "replace long if/elif chains on one value with a lookup table or dispatch",
+        "return early for edge cases so the main path is not nested",
+        "if the branching is inherent, raise the threshold in the analysis config rather than splitting artificially"
+      ],
+      "evidenceDigest": {
+        "files": [
+          ".agents/skills/archify/modules/code-analysis/extract/cpp/extract.py"
+        ],
+        "lines": [
+          52,
+          98
+        ],
+        "sha256": "d3675d6732bc0bd31c456232885ea1bc6d3cedefb022882dfca4e57d7f12b2eb"
+      }
+    },
+    {
+      "id": "COMP-679c1c099ff4",
+      "code": "complexity/function",
+      "dimension": "complexity",
+      "severity": "warning",
+      "confidence": 1,
+      "message": "main in .agents/skills/archify/modules/code-analysis/extract/cpp/extract.py has cyclomatic complexity 71 (189 lines). More independent paths make it harder to read and to test fully; this is a maintenance signal, not a defect.",
+      "subject": {
+        "file": ".agents/skills/archify/modules/code-analysis/extract/cpp/extract.py",
+        "function": "main",
+        "line": 256,
+        "endLine": 444
+      },
+      "evidence": {
+        "threshold": {
+          "complexity": 25,
+          "nesting": 6
+        },
+        "thresholds": {
+          "info": {
+            "complexity": 15,
+            "nesting": 5
+          },
+          "warning": {
+            "complexity": 25,
+            "nesting": 6
+          }
+        },
+        "complexity": 71,
+        "nesting": 5,
+        "deepestLine": 414,
+        "length": 189
+      },
+      "supportedFixes": [
+        "start at the deepest nested block: extract it into a named helper with its own tests",
+        "replace long if/elif chains on one value with a lookup table or dispatch",
+        "return early for edge cases so the main path is not nested",
+        "if the branching is inherent, raise the threshold in the analysis config rather than splitting artificially"
+      ],
+      "evidenceDigest": {
+        "files": [
+          ".agents/skills/archify/modules/code-analysis/extract/cpp/extract.py"
+        ],
+        "lines": [
+          256,
+          444
+        ],
+        "sha256": "81adf7582e065c9b69c71903a7306af0e63f375a14d4d11e8e6cb6c253443a6f"
+      }
+    },
+    {
+      "id": "COMP-7fc83d379eac",
+      "code": "complexity/function",
+      "dimension": "complexity",
+      "severity": "info",
+      "confidence": 1,
+      "message": "FaceRecognizer.recognize_group_faces in app/face_recognizer.py has cyclomatic complexity 21 (131 lines). More independent paths make it harder to read and to test fully; this is a maintenance signal, not a defect.",
+      "subject": {
+        "file": "app/face_recognizer.py",
+        "function": "FaceRecognizer.recognize_group_faces",
+        "line": 163,
+        "endLine": 293
+      },
+      "evidence": {
+        "threshold": {
+          "complexity": 15,
+          "nesting": 5
+        },
+        "thresholds": {
+          "info": {
+            "complexity": 15,
+            "nesting": 5
+          },
+          "warning": {
+            "complexity": 25,
+            "nesting": 6
+          }
+        },
+        "complexity": 21,
+        "nesting": 3,
+        "deepestLine": 233,
+        "length": 131
+      },
+      "supportedFixes": [
+        "start at the deepest nested block: extract it into a named helper with its own tests",
+        "replace long if/elif chains on one value with a lookup table or dispatch",
+        "return early for edge cases so the main path is not nested",
+        "if the branching is inherent, raise the threshold in the analysis config rather than splitting artificially"
+      ],
+      "evidenceDigest": {
+        "files": [
+          "app/face_recognizer.py"
+        ],
+        "lines": [
+          163,
+          293
+        ],
+        "sha256": "684a14cb815891c1b70debb99748b146b9209c704238956f4258e2fb3c5f02ef"
+      }
+    },
+    {
+      "id": "COMP-bd40d626976c",
+      "code": "complexity/function",
+      "dimension": "complexity",
+      "severity": "info",
+      "confidence": 1,
+      "message": "download_image in scripts/generate_sample_data.py has nesting depth 5 (18 lines). More independent paths make it harder to read and to test fully; this is a maintenance signal, not a defect.",
+      "subject": {
+        "file": "scripts/generate_sample_data.py",
+        "function": "download_image",
+        "line": 47,
+        "endLine": 64
+      },
+      "evidence": {
+        "threshold": {
+          "complexity": 15,
+          "nesting": 5
+        },
+        "thresholds": {
+          "info": {
+            "complexity": 15,
+            "nesting": 5
+          },
+          "warning": {
+            "complexity": 25,
+            "nesting": 6
+          }
+        },
+        "complexity": 5,
+        "nesting": 5,
+        "deepestLine": 56,
+        "length": 18
+      },
+      "supportedFixes": [
+        "start at the deepest nested block: extract it into a named helper with its own tests",
+        "replace long if/elif chains on one value with a lookup table or dispatch",
+        "return early for edge cases so the main path is not nested",
+        "if the branching is inherent, raise the threshold in the analysis config rather than splitting artificially"
+      ],
+      "evidenceDigest": {
+        "files": [
+          "scripts/generate_sample_data.py"
+        ],
+        "lines": [
+          47,
+          64
+        ],
+        "sha256": "d562bf02fd1a1cb04ab2b44aa0aa6673efb42e928b89a6d5e04377738c8bb25c"
+      }
+    },
+    {
+      "id": "COUP-9f6119331902",
+      "code": "coupling/internal-leak",
+      "dimension": "coupling",
+      "severity": "info",
+      "confidence": 1,
+      "message": "app has an entry point (app/__init__.py), but 1 import from 1 module reach 1 of its internal files directly.",
+      "subject": {
+        "module": "app"
+      },
+      "evidence": {
+        "entries": [
+          "app/__init__.py"
+        ],
+        "entrySource": "detected",
+        "internalFiles": [
+          "app/ui_main_window.py"
+        ],
+        "moduleFiles": 5,
+        "consumers": [
+          "main"
+        ],
+        "viaEntry": 1,
+        "totalImports": 1,
+        "files": [
+          "main.py"
+        ],
+        "imports": [
+          {
+            "file": "main.py",
+            "line": 8,
+            "to": "app/ui_main_window.py"
+          }
+        ],
+        "threshold": {
+          "minFiles": 3
+        }
+      },
+      "supportedFixes": [
+        "export what consumers need from app/__init__.py and change the cited imports to use it",
+        "if a file is meant to be public, add it to rules.coupling.internalLeak.entries"
+      ],
+      "evidenceDigest": {
+        "files": [
+          "app/ui_main_window.py",
+          "main.py"
+        ],
+        "sha256": "a726e2b602c0cb332af878c24fcff7846377830eab19a0c813ae2d21ffb42b17"
+      }
+    }
+  ]
+}

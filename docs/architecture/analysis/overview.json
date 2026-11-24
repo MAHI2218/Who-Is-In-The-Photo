@@ -1,0 +1,333 @@
+{
+  "verdict": "attention",
+  "counts": {
+    "findings": 7,
+    "error": 0,
+    "warning": 3,
+    "info": 4,
+    "accepted": 0,
+    "acceptedErrors": 0,
+    "offDiagram": null
+  },
+  "review": null,
+  "groups": [
+    {
+      "code": "complexity/function",
+      "severity": "warning",
+      "count": 6,
+      "ids": [
+        "COMP-679c1c099ff4",
+        "COMP-9169b39cec14",
+        "COMP-de6f59860117",
+        "COMP-7fc83d379eac",
+        "COMP-139d77ccf1dc",
+        "COMP-bd40d626976c"
+      ]
+    },
+    {
+      "code": "coupling/internal-leak",
+      "severity": "info",
+      "count": 1,
+      "ids": [
+        "COUP-9f6119331902"
+      ]
+    }
+  ],
+  "priorities": [
+    "COMP-679c1c099ff4",
+    "COMP-9169b39cec14",
+    "COMP-de6f59860117"
+  ],
+  "investigation": {
+    "leads": [
+      {
+        "id": "COMP-679c1c099ff4",
+        "code": "complexity/function",
+        "severity": "warning",
+        "message": "main in .agents/skills/archify/modules/code-analysis/extract/cpp/extract.py has cyclomatic complexity 71 (189 lines). More independent paths make it harder to read and to test fully; this is a maintenance signal, not a defect.",
+        "where": ".agents/skills/archify/modules/code-analysis/extract/cpp/extract.py:256",
+        "symbol": "main",
+        "impact": {
+          "modules": 1,
+          "size": 71,
+          "fanIn": 0,
+          "files": 1
+        }
+      },
+      {
+        "id": "COMP-9169b39cec14",
+        "code": "complexity/function",
+        "severity": "warning",
+        "message": "collect_calls in .agents/skills/archify/modules/code-analysis/extract/cpp/extract.py has cyclomatic complexity 34 and nesting depth 6 (54 lines). More independent paths make it harder to read and to test fully; this is a maintenance signal, not a defect.",
+        "where": ".agents/skills/archify/modules/code-analysis/extract/cpp/extract.py:200",
+        "symbol": "collect_calls",
+        "impact": {
+          "modules": 1,
+          "size": 34,
+          "fanIn": 0,
+          "files": 1
+        }
+      },
+      {
+        "id": "COMP-de6f59860117",
+        "code": "complexity/function",
+        "severity": "warning",
+        "message": "flags in .agents/skills/archify/modules/code-analysis/extract/cpp/extract.py has cyclomatic complexity 25 (47 lines). More independent paths make it harder to read and to test fully; this is a maintenance signal, not a defect.",
+        "where": ".agents/skills/archify/modules/code-analysis/extract/cpp/extract.py:52",
+        "symbol": "flags",
+        "impact": {
+          "modules": 1,
+          "size": 25,
+          "fanIn": 0,
+          "files": 1
+        }
+      }
+    ],
+    "architecture": {
+      "modules": 4,
+      "edges": 1,
+      "hotspots": [
+        {
+          "id": "app",
+          "path": "app",
+          "files": 5,
+          "loc": 1819,
+          "fanIn": 1,
+          "fanOut": 0,
+          "instability": 0,
+          "entry": [
+            "app/__init__.py",
+            "app/ui_main_window.py",
+            "app/employee_loader.py"
+          ],
+          "readingWeight": 3638
+        },
+        {
+          "id": "main",
+          "path": null,
+          "files": 1,
+          "loc": 23,
+          "fanIn": 0,
+          "fanOut": 1,
+          "instability": 1,
+          "entry": [
+            "main.py"
+          ],
+          "readingWeight": 23
+        }
+      ],
+      "hotspotRanking": "Connected modules ordered by loc * (1 + log2(1 + fanIn)), then fanIn, fanOut and id. A bounded reading order, not inferred business importance, defect severity or refactoring advice.",
+      "strongestEdges": [
+        {
+          "from": "main",
+          "to": "app",
+          "weight": 2,
+          "sample": "main.py:8"
+        }
+      ],
+      "structuralSignals": [
+        {
+          "id": "COUP-9f6119331902",
+          "code": "coupling/internal-leak",
+          "severity": "info",
+          "message": "app has an entry point (app/__init__.py), but 1 import from 1 module reach 1 of its internal files directly.",
+          "where": "main.py:8",
+          "impact": {
+            "modules": 1,
+            "size": 0,
+            "fanIn": 1,
+            "files": 5
+          }
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "COMP-679c1c099ff4",
+      "code": "complexity/function",
+      "severity": "warning",
+      "componentIds": [],
+      "moduleIds": [
+        "agents-skills"
+      ],
+      "impact": {
+        "modules": 1,
+        "size": 71,
+        "fanIn": 0,
+        "files": 1
+      },
+      "relatedIds": [],
+      "status": "open"
+    },
+    {
+      "id": "COMP-9169b39cec14",
+      "code": "complexity/function",
+      "severity": "warning",
+      "componentIds": [],
+      "moduleIds": [
+        "agents-skills"
+      ],
+      "impact": {
+        "modules": 1,
+        "size": 34,
+        "fanIn": 0,
+        "files": 1
+      },
+      "relatedIds": [],
+      "status": "open"
+    },
+    {
+      "id": "COMP-de6f59860117",
+      "code": "complexity/function",
+      "severity": "warning",
+      "componentIds": [],
+      "moduleIds": [
+        "agents-skills"
+      ],
+      "impact": {
+        "modules": 1,
+        "size": 25,
+        "fanIn": 0,
+        "files": 1
+      },
+      "relatedIds": [],
+      "status": "open"
+    },
+    {
+      "id": "COMP-7fc83d379eac",
+      "code": "complexity/function",
+      "severity": "info",
+      "componentIds": [],
+      "moduleIds": [
+        "app"
+      ],
+      "impact": {
+        "modules": 1,
+        "size": 21,
+        "fanIn": 1,
+        "files": 5
+      },
+      "relatedIds": [],
+      "status": "open"
+    },
+    {
+      "id": "COMP-139d77ccf1dc",
+      "code": "complexity/function",
+      "severity": "info",
+      "componentIds": [],
+      "moduleIds": [
+        "agents-skills"
+      ],
+      "impact": {
+        "modules": 1,
+        "size": 17,
+        "fanIn": 0,
+        "files": 1
+      },
+      "relatedIds": [],
+      "status": "open"
+    },
+    {
+      "id": "COMP-bd40d626976c",
+      "code": "complexity/function",
+      "severity": "info",
+      "componentIds": [],
+      "moduleIds": [
+        "scripts"
+      ],
+      "impact": {
+        "modules": 1,
+        "size": 5,
+        "fanIn": 0,
+        "files": 2
+      },
+      "relatedIds": [],
+      "status": "open"
+    },
+    {
+      "id": "COUP-9f6119331902",
+      "code": "coupling/internal-leak",
+      "severity": "info",
+      "componentIds": [],
+      "moduleIds": [
+        "app"
+      ],
+      "impact": {
+        "modules": 1,
+        "size": 0,
+        "fanIn": 1,
+        "files": 5
+      },
+      "relatedIds": [],
+      "status": "open"
+    }
+  ],
+  "coverage": {
+    "language": "py",
+    "adapter": "pyright-parser@1.1.414/python-3.14",
+    "files": {
+      "analyzed": 9,
+      "excludedByRole": 5,
+      "excludedRoles": [
+        "generated",
+        "test"
+      ],
+      "excludePatterns": [
+        "**/node_modules/**",
+        "**/dist/**",
+        "**/build/**",
+        "**/target/**/*.java",
+        "**/coverage/**",
+        "**/*.d.ts",
+        "**/venv/**",
+        "**/venv-*/**",
+        "**/.venv/**",
+        "**/site-packages/**",
+        "**/__pycache__/**",
+        "**/.pytest_cache/**",
+        "**/.git/**",
+        "**/_archive/**"
+      ],
+      "parseErrors": []
+    },
+    "otherLanguages": [
+      {
+        "adapter": "ts",
+        "files": 288
+      },
+      {
+        "adapter": "java",
+        "files": 1
+      },
+      {
+        "adapter": "go",
+        "files": 1
+      },
+      {
+        "adapter": "rust",
+        "files": 1
+      }
+    ],
+    "unresolved": {
+      "external": 68,
+      "outside": 0,
+      "unknown": 0,
+      "opaque": 0
+    },
+    "rules": {
+      "run": [
+        "coupling/import-cycle",
+        "coupling/cycle",
+        "coupling/hub",
+        "coupling/concentration",
+        "coupling/internal-leak",
+        "complexity/function"
+      ],
+      "suppressed": []
+    },
+    "unmappedModules": [],
+    "boundaries": null,
+    "duplicates": null
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "mode": "standalone",
+  "ir": null,
+  "map": null,
+  "run": {
+    "locale": "en",
+    "openAnalysis": true,
+    "resume": {
+      "command": "node C:\\Users\\mahim\\OneDrive\\Desktop\\Who-Is-In-The-Photo\\.agents\\skills\\archify\\bin\\archify.mjs start C:\\Users\\mahim\\OneDrive\\Desktop\\Who-Is-In-The-Photo --out C:\\Users\\mahim\\OneDrive\\Desktop\\Who-Is-In-The-Photo\\docs\\architecture --locale en --language py --baseline C:\\Users\\mahim\\OneDrive\\Desktop\\Who-Is-In-The-Photo\\docs\\architecture\\baseline.json --quality standard",
+      "shell": "cmd.exe"
+    },
+    "suppressed": [],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/build/**",
+      "**/target/**/*.java",
+      "**/coverage/**",
+      "**/*.d.ts",
+      "**/venv/**",
+      "**/venv-*/**",
+      "**/.venv/**",
+      "**/site-packages/**",
+      "**/__pycache__/**",
+      "**/.pytest_cache/**",
+      "**/.git/**",
+      "**/_archive/**"
+    ],
+    "otherLanguages": [
+      {
+        "adapter": "ts",
+        "files": 288
+      },
+      {
+        "adapter": "java",
+        "files": 1
+      },
+      {
+        "adapter": "go",
+        "files": 1
+      },
+      {
+        "adapter": "rust",
+        "files": 1
+      }
+    ],
+    "boundaries": null
+  }
+}

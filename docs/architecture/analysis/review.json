@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "baseline": null,
+  "comparison": null,
+  "findings": {
+    "COMP-9169b39cec14": {
+      "status": "open"
+    },
+    "COMP-139d77ccf1dc": {
+      "status": "open"
+    },
+    "COMP-de6f59860117": {
+      "status": "open"
+    },
+    "COMP-679c1c099ff4": {
+      "status": "open"
+    },
+    "COMP-7fc83d379eac": {
+      "status": "open"
+    },
+    "COMP-bd40d626976c": {
+      "status": "open"
+    },
+    "COUP-9f6119331902": {
+      "status": "open"
+    }
+  }
+}
