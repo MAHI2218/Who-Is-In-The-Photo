@@ -20,6 +20,7 @@ import cv2
 import numpy as np
 
 from app.employee_loader import EmployeeRecord
+from app.paths import get_model_path
 
 
 # Recommended cosine similarity threshold for SFace
@@ -67,8 +68,7 @@ class FaceRecognizer:
             sface_model_path: Path to 'face_recognition_sface_2021dec.onnx'.
             cosine_threshold: Minimum cosine similarity to accept a match.
         """
-        project_root = Path(__file__).resolve().parent.parent
-        self.sface_path = sface_model_path or str(project_root / "models" / "face_recognition_sface_2021dec.onnx")
+        self.sface_path = sface_model_path or get_model_path("face_recognition_sface_2021dec.onnx")
 
         if not os.path.exists(self.sface_path):
             raise FileNotFoundError(f"SFace model file not found at: {self.sface_path}")

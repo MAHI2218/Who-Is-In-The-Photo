@@ -31,6 +31,9 @@ Desktop.ini
 !models/README.md
 
 # Output & Temp Files
+build/
+dist/
+release/
 runs/
 temp/
 debug/

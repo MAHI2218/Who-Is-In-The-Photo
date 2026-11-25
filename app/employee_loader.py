@@ -13,6 +13,8 @@ from typing import Callable, List, Optional, Tuple
 import cv2
 import numpy as np
 
+from app.paths import get_model_path
+
 
 @dataclass
 class EmployeeRecord:
@@ -83,10 +85,9 @@ class EmployeeLoader:
         score_threshold: float = 0.6,
         nms_threshold: float = 0.3,
     ):
-        # Resolve default model paths relative to project root if not explicitly provided
-        project_root = Path(__file__).resolve().parent.parent
-        self.yunet_path = yunet_model_path or str(project_root / "models" / "face_detection_yunet_2023mar.onnx")
-        self.sface_path = sface_model_path or str(project_root / "models" / "face_recognition_sface_2021dec.onnx")
+        # Resolve default model paths across source and bundled runs if not explicitly provided
+        self.yunet_path = yunet_model_path or get_model_path("face_detection_yunet_2023mar.onnx")
+        self.sface_path = sface_model_path or get_model_path("face_recognition_sface_2021dec.onnx")
 
         if not os.path.exists(self.yunet_path):
             raise FileNotFoundError(f"YuNet model not found at: {self.yunet_path}")
